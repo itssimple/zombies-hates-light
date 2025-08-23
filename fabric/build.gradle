@@ -2,6 +2,11 @@ plugins {
     id 'multiloader-loader'
     id 'fabric-loom'
 }
+
+repositories {
+    maven { url = "https://raw.githubusercontent.com/itssimple/.maven/refs/heads/main/" }
+}
+
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
     mappings loom.layered {
@@ -14,7 +19,6 @@ dependencies {
     implementation project(":common")
 
     modImplementation "se.itssimple.obsidianweave:obsidianweave-fabric:${minecraft_version}-${obsidianweave_version}"
-    modCompileOnly "se.itssimple.obsidianweave:obsidianweave-common:${minecraft_version}-${obsidianweave_version}"
 }
 
 loom {

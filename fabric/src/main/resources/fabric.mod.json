@@ -25,6 +25,7 @@
   "depends": {
     "fabricloader": ">=${fabric_loader_version}",
     "fabric": "*",
+    "obsidianweave": ">=1.0.0",
     "minecraft": "${minecraft_version}",
     "java": ">=${java_version}"
   }

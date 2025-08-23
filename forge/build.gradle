@@ -9,6 +9,10 @@ mixin { // mixin
     //config "${mod_id}-forge.mixins.json" // mixin
 }
 
+repositories {
+    maven { url = "https://raw.githubusercontent.com/itssimple/.maven/refs/heads/main/" }
+}
+
 legacyForge {
     version = "${minecraft_version}-${forge_version}"
 
@@ -48,10 +52,7 @@ dependencies {
     compileOnly project(":common")
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
 
-    runtimeOnly "se.itssimple.obsidianweave:obsidianweave-forge:${minecraft_version}-${obsidianweave_version}"
-    compileOnly "se.itssimple.obsidianweave:obsidianweave-forge:${minecraft_version}-${obsidianweave_version}"
-
-    compileOnly "se.itssimple.obsidianweave:obsidianweave-common:${minecraft_version}-${obsidianweave_version}"
+    implementation "se.itssimple.obsidianweave:obsidianweave-forge:${minecraft_version}-${obsidianweave_version}"
 }
 
 jar {
