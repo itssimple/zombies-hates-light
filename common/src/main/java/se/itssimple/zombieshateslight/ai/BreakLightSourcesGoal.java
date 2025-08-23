@@ -2,7 +2,10 @@ package se.itssimple.zombieshateslight.ai;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.monster.Zombie;
@@ -12,6 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.Vec3;
 import se.itssimple.zombieshateslight.ModCommon;
+import se.itssimple.zombieshateslight.util.Reference;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
@@ -30,15 +34,7 @@ public class BreakLightSourcesGoal extends Goal {
     private static final int MAX_BREAKING_COOLDOWN = 200;
     private static final Integer LIGHT_SOURCE_RADIUS = ModCommon.LIGHT_SOURCE_RADIUS.getValue();
 
-    private static final List<Block> TARGET_BLOCKS = List.of(
-            BuiltInRegistries.BLOCK.get(new ResourceLocation("minecraft:torch")),
-            BuiltInRegistries.BLOCK.get(new ResourceLocation("minecraft:wall_torch")),
-            BuiltInRegistries.BLOCK.get(new ResourceLocation("minecraft:lantern")),
-            BuiltInRegistries.BLOCK.get(new ResourceLocation("minecraft:shroomlight")),
-            BuiltInRegistries.BLOCK.get(new ResourceLocation("minecraft:redstone_lamp")),
-            BuiltInRegistries.BLOCK.get(new ResourceLocation("minecraft:campfire")),
-            BuiltInRegistries.BLOCK.get(new ResourceLocation("minecraft:beacon"))
-    );
+    private static final TagKey<Block> AFFECTED_BLOCKS = TagKey.create(Registries.BLOCK, new ResourceLocation(Reference.MOD_ID, "affected_blocks"));
 
     public BreakLightSourcesGoal(Zombie zombie) {
         this.zombie = zombie;
@@ -72,7 +68,7 @@ public class BreakLightSourcesGoal extends Goal {
                 .forEach(pos -> {
                     BlockState state = this.level.getBlockState(pos);
 
-                    if (state.getLightEmission() != 0 && TARGET_BLOCKS.contains(state.getBlock())) {
+                    if (state.getLightEmission() != 0 && state.is(AFFECTED_BLOCKS)) {
                         double distanceSquared = this.zombie.distanceToSqr(Vec3.atCenterOf(pos));
                         var path = this.zombie.getNavigation().createPath(pos, 0);
 

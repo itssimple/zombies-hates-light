@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:torch",
+    "minecraft:wall_torch",
+    "minecraft:lantern",
+    "minecraft:shroomlight",
+    "minecraft:redstone_lamp",
+    "minecraft:campfire",
+    "minecraft:beacon"
+  ]
+}
