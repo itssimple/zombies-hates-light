@@ -17,7 +17,7 @@ public class ModCommon {
 	}
 
 	private static void load() {
-        se.itssimple.obsidianweave.ModCommon.init();
+        //se.itssimple.obsidianweave.ModCommon.init();
 		CONFIG = se.itssimple.obsidianweave.ModCommon.registerConfig(Reference.MOD_ID, builder -> {
 			LIGHT_SOURCE_RADIUS = builder.define("light_source_radius", 10);
 			GOAL_PRIORITY = builder.define("goal_priority", 3);
