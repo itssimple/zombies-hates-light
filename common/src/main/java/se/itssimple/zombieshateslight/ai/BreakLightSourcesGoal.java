@@ -1,8 +1,6 @@
 package se.itssimple.zombieshateslight.ai;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
@@ -20,6 +18,8 @@ import se.itssimple.zombieshateslight.util.Reference;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
+import static net.minecraft.core.Registry.BLOCK_REGISTRY;
+
 public class BreakLightSourcesGoal extends Goal {
     protected final Zombie zombie;
     protected final Level level;
@@ -34,11 +34,11 @@ public class BreakLightSourcesGoal extends Goal {
     private static final int MAX_BREAKING_COOLDOWN = 200;
     private static final Integer LIGHT_SOURCE_RADIUS = ModCommon.LIGHT_SOURCE_RADIUS.getValue();
 
-    private static final TagKey<Block> AFFECTED_BLOCKS = TagKey.create(Registries.BLOCK, new ResourceLocation(Reference.MOD_ID, "affected_blocks"));
+    private static final TagKey<Block> AFFECTED_BLOCKS = TagKey.create(BLOCK_REGISTRY, new ResourceLocation(Reference.MOD_ID, "affected_blocks"));
 
     public BreakLightSourcesGoal(Zombie zombie) {
         this.zombie = zombie;
-        this.level = zombie.level();
+        this.level = zombie.level;
 
         this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
         this.breakingCooldown = 0;

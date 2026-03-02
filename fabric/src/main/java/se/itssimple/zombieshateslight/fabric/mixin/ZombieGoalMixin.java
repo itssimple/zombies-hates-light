@@ -18,7 +18,7 @@ public abstract class ZombieGoalMixin extends Mob {
         super(entityType, level);
     }
 
-    @Inject(method = "registerGoals", at = @At("TAIL"))
+    @Inject(method = "registerGoals", at = @At("HEAD"))
     private void customGoals(CallbackInfo ci) {
         var thisZombie = (Zombie) (Object) this;
         this.goalSelector.addGoal(ModCommon.GOAL_PRIORITY.getValue(), new BreakLightSourcesGoal(thisZombie));

@@ -17,5 +17,4 @@ public class ModForge {
     private void loadComplete(final FMLLoadCompleteEvent event) {
         ModCommon.init();
     }
-
 }

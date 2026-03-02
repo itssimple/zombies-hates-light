@@ -36,7 +36,7 @@ plugins {
     id 'org.gradle.toolchains.foojay-resolver-convention' version '0.8.0'
 }
 
-rootProject.name = 'Zombies-Hates-Light-1.20.1'
+rootProject.name = 'Zombies-Hates-Light-1.19.2'
 include("common")
 include("fabric")
 include("forge")
