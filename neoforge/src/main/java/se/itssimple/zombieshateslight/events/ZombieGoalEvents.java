@@ -1,15 +1,12 @@
 package se.itssimple.zombieshateslight.events;
 
 import net.minecraft.world.entity.monster.Zombie;
-import net.minecraftforge.event.entity.EntityJoinLevelEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import se.itssimple.zombieshateslight.ModCommon;
 import se.itssimple.zombieshateslight.ai.BreakLightSourcesGoal;
 import se.itssimple.zombieshateslight.data.Constants;
-import se.itssimple.zombieshateslight.util.Reference;
 
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ZombieGoalEvents {
 
     @SubscribeEvent

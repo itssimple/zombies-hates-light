@@ -2,7 +2,7 @@ modLoader="javafml"
 loaderVersion="${forge_loader_version_range}"
 license="${license}"
 issueTrackerURL="https://github.com/itssimple/.mod-issue-tracker"
-logoFile="icon.png"
+logoFile= "icon.png"
 
 [[mods]]
 modId="${mod_id}"
@@ -23,6 +23,6 @@ description='''${description}'''
 [[dependencies.${mod_id}]]
     modId="obsidianweave"
     mandatory=true
-    versionRange="[1.0.0,)"
+    versionRange="[${obsidianweave_version},)"
     ordering="AFTER"
     side="SERVER"

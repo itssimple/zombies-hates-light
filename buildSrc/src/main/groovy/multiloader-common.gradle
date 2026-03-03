@@ -105,13 +105,14 @@ processResources {
             'credits'                      : credits,
             'java_version'                 : java_version,
             'obsidianweave_version'         : obsidianweave_version,
+            'neoforge_version'             : neoforge_version,
     ]
 
     var jsonExpandProps = expandProps.collectEntries {
         key, value -> [(key): value instanceof String ? value.replace("\n", "\\\\n") : value]
     }
 
-    filesMatching(['META-INF/mods.toml']) {
+    filesMatching(['META-INF/mods.toml', 'META-INF/neoforge.mods.toml']) {
         expand expandProps
     }
 
@@ -125,7 +126,8 @@ processResources {
 publishing {
     publications {
         register('mavenJava', MavenPublication) {
-            artifactId base.archivesName.get()
+            artifactId = "${mod_id}-${project.name}"
+            version = "${minecraft_version}-${version}"
             from components.java
         }
     }

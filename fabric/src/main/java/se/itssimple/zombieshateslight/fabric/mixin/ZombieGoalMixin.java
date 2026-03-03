@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import se.itssimple.zombieshateslight.ModCommon;
 import se.itssimple.zombieshateslight.ai.BreakLightSourcesGoal;
+import se.itssimple.zombieshateslight.data.Constants;
 
 @Mixin(Zombie.class)
 public abstract class ZombieGoalMixin extends Mob {
