@@ -8,8 +8,8 @@
   "authors": [ "${mod_author}" ],
   "contact": {
     "homepage": "",
-    "sources": "${source_url}",
-    "issues": "${issue_tracker_url}"
+    "sources": "https://github.com/itssimple/zombieshateslight",
+    "issues": "https://github.com/itssimple/.mod-issue-tracker"
   },
 
   "license": "${license}",
