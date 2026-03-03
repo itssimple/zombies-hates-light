@@ -10,7 +10,7 @@ import se.itssimple.zombieshateslight.events.ZombieGoalEvents;
 
 @Mod(Reference.MOD_ID)
 public class ModNeoForge {
-    public ModNeoForge(IEventBus eventBus, ModContainer modContainer)
+    public ModNeoForge(IEventBus eventBus)
     {
         eventBus.addListener(this::loadComplete);
         NeoForge.EVENT_BUS.register(ZombieGoalEvents.class);
