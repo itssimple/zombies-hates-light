@@ -1,6 +1,6 @@
 package se.itssimple.zombieshateslight.events;
 
-import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.monster.zombie.Zombie;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import se.itssimple.zombieshateslight.ModCommon;

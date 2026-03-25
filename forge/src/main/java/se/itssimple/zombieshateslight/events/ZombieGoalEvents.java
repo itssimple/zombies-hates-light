@@ -1,8 +1,8 @@
 package se.itssimple.zombieshateslight.events;
 
-import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.monster.zombie.Zombie;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import se.itssimple.zombieshateslight.ModCommon;
 import se.itssimple.zombieshateslight.ai.BreakLightSourcesGoal;
