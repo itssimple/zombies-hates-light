@@ -17,6 +17,7 @@
 
   "environment": "*",
   "entrypoints": { "main": [ "se.itssimple.zombieshateslight.ModFabric" ] },
+  "accessWidener": "zombieshateslight.accesswidener",
   "mixins": [
     "${mod_id}.mixins.json",
     "${mod_id}-fabric.mixins.json"
